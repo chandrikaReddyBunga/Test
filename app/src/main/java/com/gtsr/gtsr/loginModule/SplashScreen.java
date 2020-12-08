@@ -26,6 +26,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import com.gtsr.gtsr.HomeActivity;
 import com.gtsr.gtsr.R;
 
 import java.security.MessageDigest;
@@ -34,7 +35,7 @@ public class SplashScreen extends AppCompatActivity {
     private static final int REQUEST = 112;
     final static int REQUEST_LOCATION = 199;
     Context mContext = this;
-    Handler handler;
+    Handler handler1;
    // private GoogleApiClient googleApiClient;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,8 +74,8 @@ public class SplashScreen extends AppCompatActivity {
         LocationTracker.getInstance().startLocation();
         // GET USer Informaion.
 
-        handler = new Handler();
-        handler.postDelayed(new Runnable() {
+        handler1 = new Handler();
+        handler1.postDelayed(new Runnable() {
             @Override
             public void run() {
                 Log.e("starting", "startLogin1");
@@ -127,12 +128,12 @@ public class SplashScreen extends AppCompatActivity {
         } else {
             Log.e("ddfsd", "da1");
           //  enableLoc();
-            handler = new Handler();
-            handler.postDelayed(new Runnable() {
+            handler1 = new Handler();
+            handler1.postDelayed(new Runnable() {
                 @Override
                 public void run() {
                     Log.e("allenable", "startLogin1");
-                    startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                    startActivity(new Intent(getApplicationContext(), HomeActivity.class));
 
                 }
             }, 1000);
